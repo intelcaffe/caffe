@@ -30,13 +30,13 @@ Time measures are: average Forward-Backward as stated by *caffe time*. *speedup*
 #### Intel(R) Xeon(R) CPU E5-2699 v3 @ 2.30GHz (MKL 11.3, GCC 4.8.3):
 Branch | googlenet(speedup: 5.5) | caffenet (speedup: 5.9) | alexnet(speedup: 5.5) | ciphar10-sigmoid-bn(speedup: 7.5) 
 ----------|-----------------------|-------------------------------|-----------------------------|---------------------
-openmp (using OMP_NUM_THREADS=36)| 813ms|1369ms|1547ms|43ms
+openmp (no HT)| 813ms|1369ms|1547ms|43ms
 master |4438ms                    |8164ms|8644ms |323ms
 
 #### Intel(R) Xeon(R) CPU E5-2699 v3 @ 2.30GHz (OpenBLAS 0.2.14, GCC 4.8.3):
-Branch | googlenet(speedup: 2.4) | caffenet (speedup: 3.7) | alexnet(speedup: 1.1)| ciphar10-sigmoid-bn(speedup: 6.6) 
+Branch | googlenet(speedup: 14.0) | caffenet (speedup: 6.9) | alexnet(speedup: 15.0)| ciphar10-sigmoid-bn(speedup: 8.4) 
 ----------|-----------------------|-------------------------------|----------|-------------------
-openmp (using OMP_NUM_THREADS=36)| 7033ms|7076ms |57980ms|81ms  
+openmp (no HT)| 1196ms|3773ms |4128ms|64ms  
 master |16848ms 	|26130ms 	|62091ms|538ms
 
 So there is significant speedup, that depends on how many CPU cores the platform does have. Tests were made using MKL(it is available free of charge now) and OpenBLAS.
