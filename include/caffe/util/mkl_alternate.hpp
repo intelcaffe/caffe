@@ -20,7 +20,9 @@ inline void apply(int n,
                   Dtype b,
                   Dtype target[],
                   Dtype  (*func)(Dtype, Dtype)) {
+#ifdef _OPENMP
     #pragma omp parallel for
+#endif
     for (int i = 0; i < n; ++i) {
         target[i] = func(src[i], b);
     }
