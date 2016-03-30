@@ -17,7 +17,7 @@ apt-get install \
     libatlas-dev libatlas-base-dev \
     libhdf5-serial-dev libgflags-dev libgoogle-glog-dev \
     bc \
-    libboost-thread-dev libboost-python-dev
+    libboost-thread-dev libboost-asio-dev
 
 # Add a special apt-repository to install CMake 2.8.9 for CMake Caffe build,
 # if needed.  By default, Aptitude in Ubuntu 12.04 installs CMake 2.8.7, but
