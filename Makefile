@@ -326,6 +326,8 @@ ifeq ($(DEBUG), 1)
 	NVCCFLAGS += -G
 else ifneq (,$(findstring icpc,$(CXX)))
 	COMMON_FLAGS += -DNDEBUG -O3 -xCORE-AVX2 -no-prec-div -fp-model fast=2
+else ifneq (,$(findstring g++,$(CXX)))
+	COMMON_FLAGS += -DNDEBUG -O3 -march=native -ffast-math
 else
 	COMMON_FLAGS += -DNDEBUG -O3
 endif
